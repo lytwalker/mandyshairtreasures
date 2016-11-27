@@ -1,0 +1,13 @@
+<div class="row article">
+    <div class="col-sm-3 col-xxs-12">
+        <a ui-sref="public.articledetails({article: $ctrl.item.id})">
+            <div class="article-tile text-center" style="background-image: url('{{$ctrl.item.image_medium}}')">
+            </div>
+        </a>
+    </div>
+    <div class="col-sm-9 col-xxs-12">
+        <small><em>{{$ctrl.item.created_at | date:'d MMMM yyyy'}}</em></small>
+        <h2><a ui-sref="public.articledetails({article: $ctrl.item.id})">{{$ctrl.item.title}}</a></h2>
+        <div>{{$ctrl.item.summary}}</div>
+    </div>
+</div>

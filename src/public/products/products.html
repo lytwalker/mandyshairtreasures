@@ -1,0 +1,9 @@
+<div id="page-header" style="background-image: url('{{productCtrl.products[0].category.image_fullscreen}}')">
+    <div class="container-fluid">
+        <h2 id="category-title" class="text-center">{{productCtrl.products[0].category.name}}</h2>
+        <p id="category-subtitle" class="text-center">{{productCtrl.products[0].category.description}}</p>
+    </div>
+</div>
+<div class="container-fluid">
+    <products-list-item ng-repeat="productsListItem in productCtrl.products" item="productsListItem"></products-list-item>
+</div>

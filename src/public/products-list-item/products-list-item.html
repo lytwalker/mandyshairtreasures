@@ -1,0 +1,11 @@
+<div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+    <a ui-sref="public.productdetails({product: $ctrl.item.id})">
+        <div class="product-tile text-center" style="background-image: url('{{$ctrl.item.photo_medium}}')">
+            <span>
+        {{$ctrl.item.name}}
+        <br/>
+        <small><span>from</span> {{$ctrl.item.prices[0].cost | currency:'£'}}</small>
+            </span>
+        </div>
+    </a>
+</div>

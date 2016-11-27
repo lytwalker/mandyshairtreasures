@@ -1,0 +1,12 @@
+<div id="page-header" style="background-image: url('{{articleDetailsCtrl.articleDetails.image_fullscreen}}')">
+    <div class="container-fluid">
+        <h2 id="category-title" class="text-center">{{articleDetailsCtrl.articleDetails.title}}</h2>
+        <p id="category-subtitle" class="text-center">{{articleDetailsCtrl.articleDetails.summary}}</p>
+    </div>
+</div>
+<div class="container product-details">
+    <div class="col-sm-12">
+        <div ng-bind-html="articleDetailsCtrl.articleDetails.content">{{articleDetailsCtrl.articleDetails.content}}</div>
+        <small><em><strong>Published on:</strong> {{articleDetailsCtrl.articleDetails.created_at | date:'d MMMM yyyy'}}</em></small> 
+    </div>
+</div>

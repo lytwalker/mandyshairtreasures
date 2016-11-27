@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mandy's Hair Treasures</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/articles.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/socialmedia.css">
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+  <body ng-app="store" ng-strict-di>
+
+    <!-- Fixed position loading indicator -->
+    <loading class="loading-indicator"></loading>
+    
+    <header>
+        <nav id="header-nav" class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div id="brand-nav" class="navbar-header col-lg-12 col-md-12 col-sm-12">
+                    <a id="main-brand" class="navbar-brand" ui-sref="public.home">
+                            Mandy's Hair Treasures<br/>
+                            <small>Quality Hair Products</small>
+                        </a>
+                    <form id="search-nav" class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                        <div><a ui-sref="public.shipping"><strong>Free International Shipping</strong></a></div>
+                    </form>
+                    <button id="menu-nav-button" type="button" class="navbar-toggle collapsed col-xs-12" data-toggle="collapse" data-target="#menu-navbar-collapse" aria-expanded="false">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="bg-grey">
+                <div class="container-fluid">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div id="menu-navbar-collapse" class="collapse navbar-collapse">
+                        <ul id="menu-nav" class="nav nav-pills nav-justified">
+                            <li ui-sref-active="active"><a ui-sref="public.home">Home</a></li>
+                            <li ui-sref-active="active"><a ui-sref="public.about">About</a></li>
+                            <li class="StylesButton dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Styles<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li ng-repeat="style in parent.reused_types | orderBy:'id'" ng-class="{active: nav.isActive('/styles/{{style.id}}/{{style.name}}')}" class="StylesButton"><a href="#/styles/{{style.id}}/{{style.name}}">{{style.name}}</a></li>
+                                </ul>
+                            </li>
+                            <li ui-sref-active="active"><a ui-sref="public.articles">News</a></li>
+                            <li ui-sref-active="active"><a ui-sref="public.contact">Contact Us</a></li>
+                            <li ui-sref-active="active" style="display:none;"><a class="cart" ui-sref="public.cart">Cart</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <ui-view>
+      <div class="text-center initial-loading">
+        <h2>Loading Site...</h2>
+      </div>
+    </ui-view>
+
+    <!-- FOOTER -->
+    <footer>
+        <div id="newsletter" class="bg-grey">
+            <div class="container-fluid">
+                <div id="subscribe">
+                    <!-- Begin MailChimp Signup Form -->
+                    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                    <style type="text/css">
+                        #mc_embed_signup {
+                            background: #fff;
+                            clear: left;
+                            font: 14px Helvetica, Arial, sans-serif;
+                            width: 100%;
+                        }
+                        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                    </style>
+                    <div id="mc_embed_signup">
+                        <form action="//mandyshairtreasures.us13.list-manage.com/subscribe/post?u=7afc24e775d47a98392a61283&amp;id=0abff3b643" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <label for="mce-EMAIL">
+                                    <h3>Stay Informed</h3>
+                                    <p>Subscribe and stay updated on new products and deals</p>
+                                </label>
+                                <div class="row">
+                                    <input type="email" value="" name="EMAIL" class="email col-lg-8 col-md-8 col-sm-8 col-xs-12" id="mce-EMAIL" placeholder="Email address" required>
+                                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                        <input type="text" name="b_7afc24e775d47a98392a61283_0abff3b643" tabindex="-1" value="">
+                                    </div>
+                                    <div class="clear col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                        <input type="submit" class="button col-lg-11 col-md-11 col-sm-11 col-xs-11" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                                        <div class="socialmedia col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            <a href="https://www.facebook.com/HairTreasuresByMandy?ref=hl"><span>Facebook</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--End mc_embed_signup-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="footer-nav">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <a  ui-sref="public.privacy">Privacy</a> &middot; <a ui-sref="public.terms">Terms</a> &middot; <a ui-sref="public.faqs">Help</a>
+                <p></p>
+            </div>
+            <div id="copyright">
+                <p class="pull-right">Proudly designed & developed by <a href="https://sleepingcs.com" target="_blank">Sleeping Chicken Software</a></p>
+                <p>&copy; 2016 by Mandy's Hair Treasures.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Libs -->
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="lib/angular-sanitize.js"></script>
+
+    <!-- Main Store Module -->
+    <script src="src/store.module.js"></script>
+
+    <!-- Common Module -->
+    <script src="src/common/common.module.js"></script>
+    <script src="src/common/loading/loading.component.js"></script>
+    <script src="src/common/loading/loading.interceptor.js"></script>
+    <script src="src/common/article.service.js"></script>
+    <script src="src/common/category.service.js"></script>
+    <script src="src/common/product.service.js"></script>
+
+    <!-- Public Module -->
+    <script src="src/public/public.module.js"></script>
+    <script src="src/public/public.routes.js"></script>
+    <script src="src/public/articles/article.controller.js"></script>
+    <script src="src/public/articles-list-item/articles-list-item-component.js"></script>
+    <script src="src/public/article-details/article-details.controller.js"></script>
+    <script src="src/public/categories/category.controller.js"></script>
+    <script src="src/public/categories-list-item/categories-list-item.component.js"></script>
+    <script src="src/public/products/products.controller.js"></script>
+    <script src="src/public/products-list-item/products-list-item.component.js"></script>
+    <script src="src/public/product-details/product-details.controller.js"></script>
+
+    <!-- ADMIN SITE -->
+
+    <!--Application files -->
+
+  </body>
+
+</html>

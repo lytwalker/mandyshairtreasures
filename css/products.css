@@ -1,0 +1,78 @@
+.list {
+    margin-bottom: 40px;
+}
+
+.menu-item-photo > img {
+    margin: 0 auto;
+    border-radius: 0;
+    display: block;
+}
+
+.menu-item-description {
+    margin: 30px 0;
+}
+
+.menu-item-price {
+    font-size: 1.2em;
+}
+
+table {
+    background-color: #ddd;
+}
+
+table tr:nth-child(2n) {
+    background-color: #ccc;
+}
+
+table td {
+    padding: 10px 15px;
+    border: #eee solid 1px;
+}
+
+table tr td:first-child {
+    background-color: #F9408A;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/** Product Prices **/
+
+.prices h4 {
+    padding-left: 15px;
+}
+.prices .price {
+    text-align: center;
+    background-color: #fff;
+    border: dotted 1px #000;
+    padding: 10px;
+}
+.prices .mainPrice {
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+.container.product-details {
+    margin: 30px 0;
+}
+
+.btn.pink {
+    width: 100%;
+    border-radius: 0;
+}
+
+/********** Medium devices Only :-) (e.g., iPhone 4) **********/
+
+@media (max-width: 768px) {
+    .menu-item-photo > img {
+        display: block;
+    }
+}
+
+
+/********** Super small devices Only :-) (e.g., iPhone 4) **********/
+
+@media (max-width: 425px) {
+    .list {
+        margin-top: 40px;
+    }
+}

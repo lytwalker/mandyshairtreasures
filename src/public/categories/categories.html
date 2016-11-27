@@ -1,0 +1,9 @@
+<div id="page-header" style="background-image: url('{{categoryCtrl.categories[0].type.image_fullscreen}}')">
+    <div class="container-fluid">
+        <h2 id="category-title" class="text-center">{{categoryCtrl.categories[0].type.name}}</h2>
+        <p id="category-subtitle" class="text-center">{{categoryCtrl.categories[0].type.description}}</p>
+    </div>
+</div>
+<div class="container-fluid">
+    <categories-list-item ng-repeat="categoriesListItem in categoryCtrl.categories" item="categoriesListItem"></categories-list-item>
+</div>
