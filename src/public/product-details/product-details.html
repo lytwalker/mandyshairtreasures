@@ -17,12 +17,12 @@
     </div>
     <div class="col-md-8">
         <h3>{{productDetailsCtrl.productDetails.name}}</h3>
-        <p ng-bind-html="productDetailsCtrl.productDetail.description"></p>
+        <div ng-bind-html="productDetailsCtrl.productDetails.description"></div>
         <small>SKU: {{productDetailsCtrl.productDetails.sku}}</small>
         <div class="prices">
             <div class="row">
                 <h4>Please choose a length</h4>
-                <div ng-repeat="price in product.prices">
+                <div ng-repeat="price in productDetailsCtrl.productDetails.prices">
                     <div class="col-md-3">
                         <div class="price" ng-click="setPrice(price)">
                             <small>{{price.colour}}</small>
